@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/project.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jest Smart Home Profile</title>
+  </head>
+  <body>
+    <main>
+      <h1>Your Profile</h1>
+      <form>
+        <div>
+          <label>Name</label
+          ><input id="first_name" type="text" placeholder="First Name" />
+          <input id="last_name" type="text" placeholder="Last Name" />
+          <span id="name_error" class="error-span"></span>
+        </div>
+        <div>
+          <label>Email</label
+          ><input id="email" type="text" placeholder="nando@goat.es" />
+          <span id="email_error" class="error-span"></span>
+        </div>
+        <div>
+          <label>Date of Birth</label
+          ><input id="dob" type="date" value="1991-02-07" /><span
+            id="dob_error"
+            class="error-span"
+          ></span>
+        </div>
+        <div>
+          <label>Password</label><input type="password" id="password" />
+        </div>
+        <div>
+          <label>Confirm Password</label
+          ><input type="password" id="confirm_password" />
+          <span id="password_error" class="error-span"></span>
+        </div>
+      </form>
+      <div>
+        <label></label
+        ><input type="submit" id="update_profile" value="Update" /><input
+          id="reset_form"
+          type="reset"
+        />
+      </div>
+      <div>
+        <h2>Current User Settings</h2>
+        <div>
+          <label>Name&nbsp;&nbsp;</label
+          ><span id="user_first_name" class="current-setting">Lance</span>
+          <span id="user_last_name" class="current-setting">Strulovich</span>
+        </div>
+        <div>
+          <label>Email&nbsp;&nbsp;</label
+          ><span id="user_email" class="current-setting"
+            >daddysboy@aston.co.uk</span
+          >
+        </div>
+        <div>
+          <label>Date of Birth&nbsp;&nbsp;</label
+          ><span id="user_dob" class="current-setting">7 February 1991</span>
+        </div>
+        <div>
+          <label>Password Updated&nbsp;&nbsp;</label
+          ><span id="user_password_last_changed" class="current-setting"
+            >1 March 2023</span
+          >
+        </div>
+      </div>
+    </main>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

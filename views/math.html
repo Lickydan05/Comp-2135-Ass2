@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/project.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Math Sandbox</title>
+  </head>
+  <body>
+    <main>
+      <h1>Math Sandbox</h1>
+      <div>
+        <h2>Division</h2>
+      </div>
+      <div>
+        <label>Equation</label>
+        <input type="text" id="division_1" /> /
+        <input type="text" id="division_2" />
+      </div>
+      <div><label> </label><button id="division_btn">Calculate</button></div>
+      <div>
+        <label>Result</label>
+        <input type="text" id="division_result" disabled />
+      </div>
+      <div>
+        <label>Integer Result</label>
+        <input type="text" id="int_division_result" disabled />
+      </div>
+      <div>
+        <label>Floor Result</label>
+        <input type="text" id="floor_division_result" disabled />
+      </div>
+      <div>
+        <label>Ceiling Result</label>
+        <input type="text" id="ceiling_division_result" disabled />
+      </div>
+      <div>
+        <label>Rounded Result</label>
+        <input type="text" id="rounded_division_result" disabled />
+      </div>
+      <div><h2>Modulo</h2></div>
+      <div>
+        <label>Equation</label>
+        <input type="text" id="modulo_1" /> %
+        <input type="text" id="modulo_2" />
+      </div>
+      <div><label> </label><button id="modulo_btn">Calculate</button></div>
+
+      <div>
+        <label>Result</label>
+        <input type="text" id="modulo_result" disabled />
+      </div>
+      <div>
+        <h2>For Loop</h2>
+        <div>
+          <label
+            >How many times should this for loop run? (Max value of Iterator)
+          </label>
+          <input type="number" id="for_limit" value="1" min="1" />
+        </div>
+        <div>
+          <label>What should be the initial value of the counter?</label>
+          <input type="number" id="for_counter" value="0" />
+        </div>
+        <div>
+          <label>How much should the counter change by?</label>
+          <input type="number" id="for_increment" value="1" />
+        </div>
+        <div>
+          <label>The counter should...</label>
+          <select id="for_increment_direction">
+            <option value="positive">Increment (+)</option>
+            <option value="negative">Decrement(-)</option>
+          </select>
+        </div>
+        <div><label> </label><button id="for_loop_btn">Run</button></div>
+
+        <div>
+          <label>Result</label>
+          <input type="text" id="for_result" disabled />
+        </div>
+      </div>
+    </main>
+    <script src="js/math.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0 auto;
+    width: 700px;
+    border: 3px solid cornflowerblue;
+    padding: 0 2em 1em;
+}
+h1 {
+    color: cornflowerblue;
+}
+div {
+    margin-bottom: .5em;
+}
+label {
+    display: inline-block;
+    width: 11em;
+    text-align: right;
+}
+input {
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+
+span {
+    color:black;
+    font-size: 12px;
+
+}
+
+#main_image{
+    max-width: 200px;
+}
+
+.error-span {
+    color: red;
+}
+
+.current-setting{
+    font-weight: bold;
+}
+
+label {
+    font-size: 12px;
+}
+
+select {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    width: 11em;
+}
+
+button {
+    margin-left: 1.5em;
+    width: 11em;
+}
+
+
+h2 {
+    color: cornflowerblue;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#image_list{
+    display: none;
+}
+
+.menu-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+  .menu-li {
+    float: left;
+  }
+  
+  .menu-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .menu-li a:hover {
+    background-color: cornflowerblue;
+  }
+
+  .hidden{
+    display: none;
+  }
