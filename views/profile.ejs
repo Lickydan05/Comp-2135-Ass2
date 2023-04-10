@@ -37,17 +37,15 @@
           <label>Password</label><input type="password" id="password" />
         </div>
         <div>
-          <label>Confirm Password</label
-          ><input type="password" id="confirm_password" />
+          <label>Confirm Password</label>
+          <input type="password" id="confirm_password" />
           <span id="password_error" class="error-span"></span>
         </div>
       </form>
       <div>
-        <label></label
-        ><input type="submit" id="update_profile" value="Update" /><input
-          id="reset_form"
-          type="reset"
-        />
+        <label></label> 
+        <input type="submit" id="update_profile" value="Update" />
+        <input id="reset_form" type="reset"/>
       </div>
       <div>
         <h2>Current User Settings</h2>
@@ -74,6 +72,7 @@
         </div>
       </div>
     </main>
+    <%- include ('layouts/footer') -%> 
     <script src="js/profile.js"></script>
   </body>
 </html>

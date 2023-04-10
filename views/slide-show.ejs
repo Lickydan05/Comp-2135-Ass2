@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fishing Slide Show</title>
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <%- include('layouts/menu') -%>
+    <main>
+        <h1>Slide Show</h1>
+
+        <ul id="image_list">
+            <li><a class="workplz" href="images/au_hehe.png" title="Hehe"></a></li>
+            <li><a class="workplz" href="images/cute cat.png" title="Nice kitty"></a></li>
+            <li><a class="workplz" href="images/game over.PNG" title="Wah Woh"></a></li>
+            <li><a class="workplz" href="images/TheFirstTree_ending.png" title="A message"></a></li>
+            <li><a class="workplz" href="images/wagging finger.png" title="No no no!"></a></li>
+            <li><a class="workplz" href="images/yowl.png" title="Cat goes crazy"></a></li>
+        </ul>
+    
+        <p><img id="main_image" src="images/au_hehe.png" alt="Hehe"></p>
+        <h2 id="caption">Hehe</h2>    
+
+                 <!--Next and prev buttons-->
+            
+                
+        <button class="previous">Previous</button>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="next">Next</button>
+
+        <script src="js/slide-show.js"></script>
+    </main>  
+    <%- include ('layouts/footer') -%> 
+</body>
+</html>

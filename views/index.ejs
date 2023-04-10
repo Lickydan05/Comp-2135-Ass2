@@ -66,13 +66,32 @@
             value="21"
           /><span id="temperature_error" class="error-span"></span>
         </div>
+                <div>
+          <label></label>
+          <button type="submit" value="Update" id="update_settings" >Submit</button>
+          <button type="button" value="Reset" id="reset_form" >Reset</button>
+        </div>
+        <h2>Temporary Temp</h2>
+        <div>
+          <label for="time">Enter time (hh:mm):</label>
+          <input type="text" id="time" name="time" placeholder="00:00">
+          <p class="error-span" id="timer_error"></p>
+        </div>
+        <div id="tempTemperature">
+          <label for="temp">Enter Temperature:</label>
+          <input type="number" id="temp" name="temp" min="5" max="30" step="0.5" placeholder="21"> 
+          <p class="error-span" id="temp_error"></p>
+        </div>
+        
         <div>
           <label></label>
-          <input type="submit" value="Update" id="update_settings" />
-          <input type="reset" value="Reset" id="reset_form" />
+          <button type="button" id = "temp_button" >Start</button>
+          <button type="button" id = "reset_temp" >Reset</button>
         </div>
+        <p id="timerTemp"></p>
       </form>
       <h2>Current Settings</h2>
+     <div id = "Stylez">
       <div>
         <label>Notifications&nbsp;</label>
         <span class="current-setting" id="setting_notifications">On</span>
@@ -88,9 +107,11 @@
       <div>
         <label>Temperature&nbsp;</label
         ><span class="current-setting" id="setting_temperature">21</span
-        ><span>°C</span>
+        ><span id = "celcius">°C</span>
       </div>
+     </div>
     </main>
+    <%- include ('layouts/footer') -%> 
     <script src="js/dashboard.js"></script>
   </body>
 </html>
