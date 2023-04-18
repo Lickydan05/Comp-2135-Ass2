@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/project.css" />
+  <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jest Smart Home</title>
@@ -9,7 +10,7 @@
   <body>
     <%- include('layouts/menu') -%>
     <main>
-      <h1>Jest Smart Home</h1>
+     <h1>Jest Smart Home</h1>
       <div>
         <h3 id="date_display"></h3>
       </div>
@@ -68,7 +69,7 @@
         </div>
                 <div>
           <label></label>
-          <button type="submit" value="Update" id="update_settings" >Submit</button>
+          <button type="submit" value="Update" id="update_settings" action="/update-index" method="POST">Submit</button>
           <button type="button" value="Reset" id="reset_form" >Reset</button>
         </div>
         <h2>Temporary Temp</h2>
@@ -94,24 +95,39 @@
      <div id = "Stylez">
       <div>
         <label>Notifications&nbsp;</label>
-        <span class="current-setting" id="setting_notifications">On</span>
+        <span class="currentsetting" id="setting_notifications">On</span>
       </div>
       <div>
         <label>Lighting Mode&nbsp;</label>
-        <span class="current-setting" id="setting_lighting_mode">Eco</span>
+        <span class="currentsetting" id="setting_lighting_mode">Eco</span>
       </div>
       <div>
         <label>Location&nbsp;</label
-        ><span class="current-setting" id="setting_location">L7W 4T8</span>
+        ><span class="currentsetting" id="setting_location">L7W 4T8</span>
       </div>
       <div>
+
+        <% if(beans) { %>
+          <div>
+            <label>Temper&nbsp;</label>
+            <h1><%= beans.setting_temperature %>°C</h1>
+          </div>
+          <%} else { %>
+            <div>
+              <label>Notifications&nbsp;</label>
+              <span class="currentsetting" id="setting_notifications">On</span>
+            </div>
+          <%} %>
+
+
         <label>Temperature&nbsp;</label
-        ><span class="current-setting" id="setting_temperature">21</span
+        ><span class="currentsetting" id="setting_temperature">21</span
         ><span id = "celcius">°C</span>
       </div>
      </div>
     </main>
     <%- include ('layouts/footer') -%> 
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
     <script src="js/dashboard.js"></script>
   </body>
 </html>

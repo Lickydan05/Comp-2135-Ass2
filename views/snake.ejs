@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/project.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snakey</title>
+  </head>
+  <body>
+    <%- include('layouts/menu') -%>
+    <main>
+      <div id="score">0</div>
+      <canvas id="snakeboard" width="600" height="600"></canvas>
+      <div id="gameOver">Game Over</div>
+      <button id="restart">Play Again?</button>
+  
+
+    </main>
+    <%- include ('layouts/footer') -%> 
+    <script src="js/snaker.js"></script>
+  </body>
+</html>

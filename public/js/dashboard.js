@@ -131,7 +131,7 @@ function TempTimer() {
       if (distance <= 0) {
         clearInterval(timer);
         $("#setting_temperature").textContent = $("#temperature").value;
-        $("timerTemp").innerHTML = "Countdown finished!";
+        $("#timerTemp").innerHTML = "Countdown finished!";
         $("#temp_button").disabled = false;
       };
       //Resets the interval
@@ -148,7 +148,7 @@ function TempTimer() {
       if (distance <= 0) {
         clearInterval(timer);
         $("#setting_temperature").textContent = $("#temperature").value;
-        $("timerTemp").innerHTML = "Countdown finished!";
+        $("#timerTemp").innerHTML = "Countdown finished!";
         $("#temp_button").disabled = false;
       };
     };

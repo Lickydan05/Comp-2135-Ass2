@@ -49,7 +49,7 @@ span {
     color: red;
 }
 
-.current-setting{
+.currentsetting{
     font-weight: bold;
     color: white;
 }
@@ -541,4 +541,8 @@ p {
     margin-right: auto;
   }
 
-  
+  #score {
+    text-align: center;
+    font-size: 140px;
+    margin: 0px;
+  }

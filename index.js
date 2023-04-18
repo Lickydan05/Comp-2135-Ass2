@@ -25,8 +25,19 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => {
   //res.sendFile(path.resolve(__dirname + "/views/", "index.html"));
-  res.render("index");
+  console.log(req.session)
+
+  let beans = req.session.user;
+  res.render("index", {beans})
 });
+
+app.post("/update-index", (req, res)=>{
+  console.log(req.body);
+
+  req.session.user= req.body;
+
+  res.redirect("/index")
+})
 
 app.get("/profile", (req, res) => {
   console.log(req.session)
@@ -47,6 +58,11 @@ app.post("/update-profile", (req, res)=>{
   res.redirect("/profile")
 })
 
+
 app.get("/terms", (req, res) => {
   res.render("terms");
+});
+
+app.get("/snake", (req, res) => {
+  res.render("snake");
 });
