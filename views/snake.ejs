@@ -10,13 +10,16 @@
     <%- include('layouts/menu') -%>
     <main>
       <div id="score">0</div>
+    <div class="canvas-container">
       <canvas id="snakeboard" width="600" height="600"></canvas>
+      <button id='startGame'>Whats up</button> 
       <div id="gameOver">Game Over</div>
       <button id="restart">Play Again?</button>
-  
+    </div> 
 
     </main>
     <%- include ('layouts/footer') -%> 
     <script src="js/snaker.js"></script>
   </body>
 </html>
+

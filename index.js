@@ -27,14 +27,14 @@ app.get("/", (req, res) => {
   //res.sendFile(path.resolve(__dirname + "/views/", "index.html"));
   console.log(req.session)
 
-  let beans = req.session.user;
+  let beans = req.session.beans;
   res.render("index", {beans})
 });
 
 app.post("/update-index", (req, res)=>{
   console.log(req.body);
 
-  req.session.user= req.body;
+  req.session.beans = req.body;
 
   res.redirect("/index")
 })
@@ -46,10 +46,6 @@ app.get("/profile", (req, res) => {
   res.render("profile", {user})
 });
 
-app.get("/slide-show", (req, res) => {
-  res.render("slide-show");
-});
-
 app.post("/update-profile", (req, res)=>{
   console.log(req.body);
 
@@ -58,6 +54,9 @@ app.post("/update-profile", (req, res)=>{
   res.redirect("/profile")
 })
 
+app.get("/slide-show", (req, res) => {
+  res.render("slide-show");
+});
 
 app.get("/terms", (req, res) => {
   res.render("terms");
@@ -66,3 +65,4 @@ app.get("/terms", (req, res) => {
 app.get("/snake", (req, res) => {
   res.render("snake");
 });
+

@@ -191,7 +191,6 @@ p {
     display: none;
 }
 
-  
 .footer-ul {
     margin-top: auto;
     list-style-type: none;
@@ -529,20 +528,24 @@ p {
     color: white;
 }
 
-.square {
-    height: auto;
-    max-width: 100%;
-    border-color: #6F432A #98633B;
-    border-image: none;
-    border-radius: 0 0 0 0;
-    border-style: solid;
-    border-width: 30px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   #score {
     text-align: center;
     font-size: 140px;
     margin: 0px;
+  }
+
+  .canvas-container{
+    position: relative;
+    width: 600px;
+    height: 600px;
+  }
+  #snakeboard {
+    position: absolute;
+    left: 65%;
+    background-color:lightgrey
+  }
+  #startGame {
+    position:absolute;
+    left:100%;
+    top:50%
   }
