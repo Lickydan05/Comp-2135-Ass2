@@ -36,7 +36,7 @@ app.post("/update-index", (req, res)=>{
 
   req.session.beans = req.body;
 
-  res.redirect("/index")
+  res.redirect("/")
 })
 
 app.get("/profile", (req, res) => {

@@ -67,6 +67,7 @@ const onSubmit = (evt) => {
     $("#setting_temperature").textContent = temperature;
   }
 
+    $("#index-form").submit();
   evt.preventDefault();
 };
 

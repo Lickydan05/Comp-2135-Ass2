@@ -14,10 +14,10 @@
       <div>
         <h3 id="date_display"></h3>
       </div>
-      <form>
+      <form id="index-form" action="/update-index" method="post">
         <div>
           <label>Notifications</label>
-          <input type="checkbox" id="notifications" checked />
+          <input type="checkbox" id="notifications" checked name="notificate"/>
         </div>
         <div>
           <label>Power Mode</label>
@@ -53,6 +53,7 @@
             id="location"
             placeholder="Postal Code"
             value="L7W 4T8"
+            name = "postal"
           /><span id="location_error" class="error-span"></span>
         </div>
         <div>
@@ -69,7 +70,7 @@
         </div>
                 <div>
           <label></label>
-          <button type="submit" value="Update" id="update_settings" action="/update-index" method="POST">Submit</button>
+          <button type="submit" value="Update" id="update_settings" action="/update-index" method="post">Submit</button>
           <button type="button" value="Reset" id="reset_form" >Reset</button>
         </div>
         <h2>Temporary Temp</h2>
@@ -93,31 +94,47 @@
       </form>
       <h2>Current Settings</h2>
      <div id = "Stylez">
-      <div>
-        <label>Notifications&nbsp;</label>
-        <span class="currentsetting" id="setting_notifications">On</span>
-      </div>
-      <div>
-        <label>Lighting Mode&nbsp;</label>
-        <span class="currentsetting" id="setting_lighting_mode">Eco</span>
-      </div>
-      <div>
-        <label>Location&nbsp;</label
-        ><span class="currentsetting" id="setting_location">L7W 4T8</span>
-      </div>
-      <div>
-
         <% if(beans) { %>
           <div>
-            <label>Temper&nbsp;</label>
-            <h1><%= beans.setting_temperature %>°C</h1>
+            <label>Notifications <%= beans.notificate %></label>
           </div>
           <%} else { %>
             <div>
-              <label>Notifications&nbsp;</label>
-              <span class="currentsetting" id="setting_notifications">On</span>
+              <label>Erorr</label>
             </div>
           <%} %>
+
+        <% if(beans) { %>
+          <div>
+            <label>Lighting mode <%= beans.lighting_mode %></label>
+          </div>
+          <%} else { %>
+            <div>
+              <label>Erorr</label>
+            </div>
+          <%} %>
+
+        <% if(beans) { %>
+          <div>
+            <label>Location <%= beans.postal %></label>
+          </div>
+          <%} else { %>
+            <div>
+              <label>Erorr</label>
+            </div>
+          <%} %>
+
+        <% if(beans) { %>
+          <div>
+            <label>Temperature <%= beans.temperature %> °C </label>
+          </div>
+          <%} else { %>
+            <div>
+              <label>Erorr</label>
+            </div>
+          <%} %>
+
+
 
 
         <label>Temperature&nbsp;</label
