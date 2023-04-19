@@ -6,26 +6,125 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(white, gray, black);
+    background-image: linear-gradient(white, gray, white);
 }
+ 
+
+.flex_container {
+  /*display: flex;
+  width: 10em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: left;
+  padding-left: 10px;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;*/
+  height: auto;
+  padding: 50px;
+  
+}
+
+
+.container {
+/*display: block;
+  text-align: center;
+  width: 10em;
+  flex-direction: column;
+  justify-content: right;*/
+display: flex;
+flex-wrap: wrap;
+  
+}
+
+.cell {
+  flex: 1 1 200px;
+  height: 50px;
+ 
+  
+}
+
+.wurd {
+text-align: left;
+}
+
+.dblwurd {
+  text-align: left;
+}
+
+.trplwurd {
+  text-align: left;
+}
+
+.qdrplwurd {
+  text-align: left;
+}
+
+.quinwurd {
+  text-align: left;
+}
+
+#first_name {
+  padding: 5px;
+  margin: 10px;
+  width: 10em;
+  
+}
+
+#last_name {
+  padding: 5px;
+  margin: 10px;
+  width: 10em;
+}
+
+#email {
+  margin: 10px;
+  padding: 5px;
+  width: 10em;
+}
+
+#confirm_password {
+  margin: 10px;
+  padding: 5px;
+  width: 10em;
+}
+
 
 h1 {
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+ color: #111;
+ text-align: left;
+ font-family: Arial, Helvetica, sans-serif;
+ padding-left: 10px;
+}
+
+#dob {
+color: #002bff;
+margin: 10px;
+padding: 5px;
+width: 10em;
 }
 
 div {
     margin-bottom: .5em;
 }
 
+
+
 label {
     display: inline-block;
-    width: 11em;
-    text-align: right;
+    width: 10em;
+  
 }
 
 input {
     margin-left: 1em;
     margin-right: 0.5em;
+
+    
 }
 
 span {
@@ -51,11 +150,11 @@ span {
 
 .currentsetting{
     font-weight: bold;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #celcius {
-    color: white;
+    color: rgb(14, 13, 13);
 }
 
 label {
@@ -73,8 +172,20 @@ button {
     width: 11em;
 }
 
+#profile-form {
+  padding-left: 45%;
+  width: 0px;
+  text-align: center;
+}
+
+#password {
+  width: 20em;
+  margin: 10px;
+  padding: 5px;
+}
+
 h2 {
-    color: beige;
+    color: rgb(66, 54, 54);
     text-align: center;
 }
 
@@ -156,7 +267,7 @@ p {
 }
 
 #Stylez {
-    color: white;
+    color: black
 }
 #image_list{
     display: none;
