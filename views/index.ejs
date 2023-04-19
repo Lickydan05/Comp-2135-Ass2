@@ -17,7 +17,7 @@
     <div class="flex_container">
         <div class="container">
           <div class="cell">
-      <form>
+      <form id = "index-form" action="/update-index" method="post">
         <div>
           <label>Notifications</label>
           <input type="checkbox" id="notifications" checked name="notificate"/>
@@ -100,28 +100,44 @@
       <h2>Current Settings</h2>
      <div id = "Stylez">
       <div>
-        <label>Notifications&nbsp;</label>
-        <span class="currentsetting" id="setting_notifications">On</span>
-      </div>
-      <div>
-        <label>Lighting Mode&nbsp;</label>
-        <span class="currentsetting" id="setting_lighting_mode">Eco</span>
-      </div>
-      <div>
-        <label>Location&nbsp;</label
-        ><span class="currentsetting" id="setting_location">L7W 4T8</span>
-      </div>
-      <div>
 
         <% if(beans) { %>
           <div>
-            <label>Temper&nbsp;</label>
-            <h1><%= beans.setting_temperature %>°C</h1>
+            <label>Notifications <%= beans.notificate %></label>
+          </div>
+         <%} else { %>
+          <div>
+            <label>Erorr</label>
+          </div>
+          <%} %>
+
+        <% if(beans) { %>
+          <div>
+            <label>Lighting Mode <%= beans.lighting_mode %></label>
+          </div>
+         <%} else { %>
+          <div>
+            <label>Erorr</label>
+          </div>
+         <%} %>
+
+        <% if(beans) { %>
+          <div>
+            <label>Location <%= beans.postal %></label>
           </div>
           <%} else { %>
             <div>
-              <label>Notifications&nbsp;</label>
-              <span class="currentsetting" id="setting_notifications">On</span>
+              <label>Erorr</label>
+            </div>
+          <%} %>
+              
+        <% if(beans) { %>
+          <div>
+            <label>Temperature <%= beans.temperature %> °C</label>
+          </div>
+          <%} else { %>
+            <div>
+              <label>Erorr</label>
             </div>
           <%} %>
 
