@@ -1,159 +1,159 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/project.css" />
-  <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jest Smart Home</title>
-  </head>
-  <body>
-    <%- include('layouts/menu') -%>
-   <main>
-     <h1>Jest Smart Home</h1>
-      <div>
-        <h3 id="date_display"></h3>
-      </div>
-    <div class="flex_container">
-        <div class="container">
-          <div class="cell">
-      <form id = "index-form" action="/update-index" method="post">
+<head>
+<link rel="stylesheet" href="css/project.css" />
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
+alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
+KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+crossorigin="anonymous"> -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title class="jest">Jest Smart Home</title>
+</head>
+<body>
+<%- include('layouts/menu') -%>
+<main>
+<h1>Jest Smart Home</h1>
+<div>
+<h3 id="date_display"></h3>
+</div>
+<div class="flex_container">
+<div class="container">
+<div class="cell">
+    <form id = "index-form" action="/update-index" method="post">
+<div>
+<label class="notis">Notifications</label>
+<input type="checkbox" id="notifications" checked name="notificate"/>
+</div>
+<div>
+<label class="powerm">Power Mode</label>
+</div>
+<div>
+<label for="off">Off</label>
+<input type="radio" id="off" name="lighting_mode" value="Off" />
+</div>
+<div>
+<label for="away">Away</label>
+<input type="radio" id="css" name="lighting_mode" value="Away" />
+</div>
+<div>
+<label for="eco">Economy</label>
+<input
+type="radio"
+id="eco"
+name="lighting_mode"
+value="Eco"
+/>
+</div>
+<div>
+<label for="full">Full</label>
+<input type="radio" id="full" name="lighting_mode" value="Full" />
+</div>
+</div>
+<div class="cell2">
+<label class="loca">Location:</label>
+<input class="postals"
+type="text"
+id="location"
+placeholder="Postal Code"
+value="L7W 4T8"
+name = "postal"
+/><span id="location_error" class="error-span"></span>
+<div>
+<label class="tempy">Temperature:</label>
+<input class="temps"
+type="number"
+id="temperature"
+name="temperature"
+min="5"
+max="30"
+step="0.5"
+value="21"
+/><span id="temperature_error" class="error-span"></span>
+</div>
+<div>
+<label></label>
+<div class="buttonss">
+<button type="submit" value="Update" id="update_settings"
+action="/update-index" method="POST">Submit</button>
+<button type="button" value="Reset" id="reset_form" >Reset</button>
+</div>
+</div>
+<h2>Temporary Temp</h2>
+<div>
+<label for="time">Enter time (hh:mm):</label>
+<input class="timesss" type="text" id="time" name="time"
+placeholder="00:00">
+<p class="error-span" id="timer_error"></p>
+</div>
+<div id="tempTemperature">
+<label for="temp">Enter Temperature:</label>
+<input class="entertemp" type="number" id="temp" name="temp" min="5"
+max="30" step="0.5" placeholder="21">
+<p class="error-span" id="temp_error"></p>
+</div>
+<div>
+<label></label>
+<div class="buttonss2">
+<button type="button" id = "temp_button" >Start</button>
+<button type="button" id = "reset_temp" >Reset</button>
+</div>
+</div>
+<p id="timerTemp"></p>
+</div>
+</form>
+<div class="cell1">
+<h2>Current Settings</h2>
+<div id = "Stylez">
+    <% if(beans) { %>
+        <div>
+          <label>Notifications <%= beans.notificate %></label>
+        </div>
+       <%} else { %>
         <div>
           <label>Notifications</label>
-          <input type="checkbox" id="notifications" checked name="notificate"/>
         </div>
+        <%} %>
+
+      <% if(beans) { %>
         <div>
-          <label>Power Mode</label>
+          <label>Lighting Mode <%= beans.lighting_mode %></label>
         </div>
-        
-          <div>
-            <label for="off">Off</label>
-            <input type="radio" id="off" name="lighting_mode" value="Off" />
-          </div>
-          <div>
-            <label for="away">Away</label>
-            <input type="radio" id="css" name="lighting_mode" value="Away" />
-          </div>
-          <div>
-            <label for="eco">Economy</label>
-            <input
-              type="radio"
-              id="eco"
-              name="lighting_mode"
-              value="Eco"
-              
-            />
-          </div>
-          <div>
-            <label for="full">Full</label>
-            <input type="radio" id="full" name="lighting_mode" value="Full" />
-          </div>
-        </div>
-          <div class="cell">
-          <label>Location</label>
-          <input
-            type="text"
-            id="location"
-            placeholder="Postal Code"
-            value="L7W 4T8"
-            name = "postal"
-          /><span id="location_error" class="error-span"></span>
-    
+       <%} else { %>
         <div>
-          <label>Temperature</label>
-          <input
-            type="number"
-            id="temperature"
-            name="temperature"
-            min="5"
-            max="30"
-            step="0.5"
-            value="21"
-          /><span id="temperature_error" class="error-span"></span>
+          <label>Lighting Mode</label>
         </div>
-                <div>
-          <label></label>
-          <button type="submit" value="Update" id="update_settings" action="/update-index" method="post">Submit</button>
-          <button type="button" value="Reset" id="reset_form" >Reset</button>
-        </div>
-        <h2>Temporary Temp</h2>
+       <%} %>
+
+      <% if(beans) { %>
         <div>
-          <label for="time">Enter time (hh:mm):</label>
-          <input type="text" id="time" name="time" placeholder="00:00">
-          <p class="error-span" id="timer_error"></p>
+          <label>Location <%= beans.postal %></label>
         </div>
-        <div id="tempTemperature">
-          <label for="temp">Enter Temperature:</label>
-          <input type="number" id="temp" name="temp" min="5" max="30" step="0.5" placeholder="21"> 
-          <p class="error-span" id="temp_error"></p>
-        </div>
-        
+        <%} else { %>
+          <div>
+            <label>Location </label>
+          </div>
+        <%} %>
+            
+      <% if(beans) { %>
         <div>
-          <label></label>
-          <button type="button" id = "temp_button" >Start</button>
-          <button type="button" id = "reset_temp" >Reset</button>
+          <label>Temperature <%= beans.temperature %> °C</label>
         </div>
-        </div>
-        <p id="timerTemp"></p>
-      </form>
-      <div class="cell">
-      <h2>Current Settings</h2>
-     <div id = "Stylez">
-      <div>
-
-        <% if(beans) { %>
+        <%} else { %>
           <div>
-            <label>Notifications <%= beans.notificate %></label>
+            <label>Temperature </label>
           </div>
-         <%} else { %>
-          <div>
-            <label>Notifications</label>
-          </div>
-          <%} %>
-
-        <% if(beans) { %>
-          <div>
-            <label>Lighting Mode <%= beans.lighting_mode %></label>
-          </div>
-         <%} else { %>
-          <div>
-            <label>Lighting Mode</label>
-          </div>
-         <%} %>
-
-        <% if(beans) { %>
-          <div>
-            <label>Location <%= beans.postal %></label>
-          </div>
-          <%} else { %>
-            <div>
-              <label>Location </label>
-            </div>
-          <%} %>
-              
-        <% if(beans) { %>
-          <div>
-            <label>Temperature <%= beans.temperature %> °C</label>
-          </div>
-          <%} else { %>
-            <div>
-              <label>Temperature </label>
-            </div>
-          <%} %>
-
-
-        <label>Temperature&nbsp;</label
-        ><span class="currentsetting" id="setting_temperature">21</span
-        ><span id = "celcius">°C</span>
-      </div>
-
-      </div>
-     </div>
-     </div>
-    </div>
-    </main>
-    <%- include ('layouts/footer') -%> 
-   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
-    <script src="js/dashboard.js"></script>
-  </body>
+        <%} %>
+</div>
+</div>
+</div>
+</div>
+</main>
+<%- include ('layouts/footer') -%>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
+alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-
+ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+crossorigin="anonymous"></script> -->
+<script src="js/dashboard.js"></script>
+</body>
 </html>

@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/project.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jest Smart Home Profile</title>
-  </head>
-  <body>
-    <%- include('layouts/menu') -%>
-    <main>
-      <% if(user) { %>
-        <h1><%= user.fname %>'s Profile</h1>
-        <%} else { %>
-          <h1>Your Profile</h1>
-        <%} %>
-      <form id="profile-form" action="/update-profile" method="post">
-        <div>
-          <label class="wurd">Name</label
-          ><input id="first_name" name="fname" type="text" placeholder="First Name" />
-          <input id="last_name" name="lname" type="text" placeholder="Last Name" />
-          <span id="name_error" class="error-span"></span>
-        </div>
-        <div>
-          <label class="dblwurd">Email</label
-          ><input id="email" type="text" placeholder="example@gmail.com" />
-          <span id="email_error" class="error-span"></span>
-        </div>
-        <div>
-          <label class="trplwurd">Date of Birth</label
-          ><input id="dob" type="date" value="1991-02-07" /><span
-            id="dob_error"
-            class="error-span"
-          ></span>
-        </div>
-        <div>
-          <label class="qdrplwurd">Password</label><input type="password" id="password" />
-        </div>
-        <div>
-          <label class="quinwurd">Confirm Password</label>
-          <input type="password" id="confirm_password" />
-          <span id="password_error" class="error-span"></span>
-        </div>
-      </form>
-      <div>
-        <label></label> 
-        <input type="submit" id="update_profile" value="Update" />
-        <input id="reset_form" type="reset"/>
-      </div>
-      <div>
-        <h2>Current User Settings</h2>
-        <div>
-          <label>Name&nbsp;&nbsp;</label
-          ><span id="user_first_name" class="current-setting">Lance</span>
-          <span id="user_last_name" class="current-setting">Strulovich</span>
-        </div>
-        <div>
-          <label>Email&nbsp;&nbsp;</label
-          ><span id="user_email" class="current-setting"
-            >daddysboy@aston.co.uk</span
-          >
-        </div>
-        <div>
-          <label>Date of Birth&nbsp;&nbsp;</label
-          ><span id="user_dob" class="current-setting">7 February 1991</span>
-        </div>
-        <div>
-          <label>Password Updated&nbsp;&nbsp;</label
-          ><span id="user_password_last_changed" class="current-setting"
-            >1 March 2023</span
-          >
-        </div>
-      </div>
-    </main>
-    <%- include ('layouts/footer') -%> 
-    <script src="js/profile.js"></script>
-  </body>
+<head>
+<link rel="stylesheet" href="css/project.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jest Smart Home Profile</title>
+</head>
+<body>
+<%- include('layouts/menu') -%>
+<main>
+<% if(user) { %>
+<h1><%= user.fname %>'s Profile</h1>
+<%} else { %>
+<h1>Your Profile</h1>
+<%} %>
+<div class="box">
+<div class="row">
+<div class="group">
+<form id="profile-form" action="/update-profile" method="post">
+<div>
+<label class="wurd">Name:</label
+><input id="first_name" name="fname" type="text" placeholder="First
+Name" />
+<input id="last_name" name="lname" type="text" placeholder="Last Name"
+/>
+<span id="name_error" class="error-span"></span>
+</div>
+<div>
+<label class="trplwurd">Date of Birth:</label
+><input id="dob" type="date" value="1991-02-07" /><span
+id="dob_error"
+class="error-span"
+></span>
+</div>
+</div>
+<div class="group2">
+<div>
+<label class="dblwurd">Email:</label
+><input id="email" type="text" placeholder="example@gmail.com" />
+<span
+id="email_error"
+class="error-span"
+></span>
+</div>
+<div>
+<label class="qdrplwurd">Password:</label><input type="password"
+id="password" />
+</div>
+<div>
+<label class="quinwurd">Confirm Password:</label>
+<input type="password" id="confirm_password" />
+<span id="password_error" class="error-span"></span>
+</div>
+</div>
+</form>
+<div class="group3">
+<div>
+<h2 class="CUS">Current User Settings</h2>
+<div>
+<label class="nmae">Name:&nbsp;&nbsp;</label
+><span id="user_first_name" class="current-setting">Lance</span>
+<span id="user_last_name" class="current-setting">Strulovich</span>
+</div>
+<div>
+<label class="emalee">Email:&nbsp;&nbsp;</label
+><span id="user_email" class="current-setting"
+>daddysboy@aston.co.uk</span
+>
+</div>
+<div>
+<label class="dofb">Date of Birth:&nbsp;&nbsp;</label
+><span id="user_dob" class="current-setting">7 February 1991</span>
+</div>
+<div>
+<label class="passup">Password Updated:&nbsp;&nbsp;</label
+><span id="user_password_last_changed" class="current-setting"
+>1 March 2023</span
+>
+</div>
+</div>
+<div>
+<label></label>
+<input type="submit" id="update_profile" value="Update" />
+<input id="reset_form" type="reset"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<%- include ('layouts/footer') -%>
+<script src="js/profile.js"></script>
+</body>
 </html>
